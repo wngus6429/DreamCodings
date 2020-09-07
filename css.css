@@ -1,0 +1,41 @@
+/** @format */
+
+/* 유니버셜 셀렉터라 하며 모두 선택 */
+* {
+  color: green;
+}
+
+li {
+  color: blue;
+}
+
+/* li에서 id가 special인 녀석을 선택 */
+li#special {
+  color: pink;
+}
+
+.red {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+
+button:hover {
+  color: red;
+  background-color: blue;
+}
+
+a[href] {
+  color: purple;
+}
+
+a[href="naver.com"] {
+  color: red;
+}
+
+/* 네이버로 시작하는 아이들만 이런식으로도 가능 */
+/* 
+a[href^="naver"] {
+    color: red;
+ } 
+*/

@@ -1,0 +1,117 @@
+/** @format */
+
+:root{
+    /* css 변수할당 방법 */
+    --text-color: #f0f4f5
+    --background-color: #263343;
+    --accent-color: #F5F1E4;
+}
+
+body {
+  margin: 0px;
+  /* nav bar 위쪽 왼쪽 오른쪽 공백 없애기 */
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+a {
+  text-decoration: none;
+  /* a태그 밑줄 없애야지 */
+  color: var(--text-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #28bbff;
+  padding: 8px 12px;
+}
+
+.navbar__logo {
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+.navbar__logo i {
+  color: #f44715;
+}
+
+.navbar__menu {
+  display: flex;
+  /* 이걸로 세로 였던 a 태그들 가로로 */
+  list-style: none;
+  /* 각 링크 앞에 점 없앰 */
+  padding-left: 0;
+}
+
+.navbar__menu li {
+  font-size: 20px;
+  padding: 8px 12px;
+  /* margin을 넘으면 클릭 가능한 범위가 작고*/
+  /* padding은 클릭 영역 커진다. */
+}
+
+.navbar__menu li:hover {
+  background-color: #f6898f;
+  border-radius: 10px;
+}
+
+.navbar__icons {
+  list-style: none;
+  color: gold;
+  display: flex;
+}
+
+.navbar__icons li {
+  font-size: 25px;
+  padding: 8px 12px;
+}
+
+.navbar__toogleBtn {
+  display: none;
+  /* 화면 줄일때만 보이게 할려고 */
+  position: absolute;
+  right: 30px;
+  font-size: 25px;
+  color: #f5515a;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 24px;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /* width100% 안주면 안됨 */
+    width: 100%;
+  }
+
+  .navbar__menu li {
+    width: 100%;
+    /* 너비가 넓어지면 텍스트는 자동으로 왼쪽 정렬됨 */
+    text-align: center;
+  }
+
+  .navbar__icons {
+    /* 지금 row이기 때문에 중간 정렬 할려면 */
+    display: none;
+    justify-content: center;
+    width: 100%;
+    /* 하지만 리스트에는 기본적으로 padding이 들어가 있음 */
+    padding-left: 0px;
+  }
+
+  .navbar__toogleBtn {
+    display: block;
+  }
+
+  .navbar__menu.active,
+  .navbar__icons.active {
+    display: flex;
+  }
+}

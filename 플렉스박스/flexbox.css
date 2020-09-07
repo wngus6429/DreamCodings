@@ -1,0 +1,41 @@
+/** @format */
+
+.container { 
+ background: beige; 
+ height: 100vh; 
+ display: flex;
+ flex-direction: row; /*row는 왼쪽에서 오른쪽*/
+ flex-wrap: wrap;
+ /* justify-content: space-around; */
+ justify-content: space-between; /* 중심축에서 아이템을 어떻게 배치하는지 결정 */
+ align-items: baseline; 
+ align-content: center;
+ /* 반대축의 아이템을 어떻게 배치할지 결정*/
+}
+
+
+.item {
+    width: 40px; /* 이두개 없으면 옆으로 길죽함 */
+    height: 40px;
+    border: 1px solid black;
+}
+
+ /* flex-flow: column nowrap; */
+ /* flex-flow는 flex-direction과 flex-wrap을 합한거임 */
+ /* justify-content: flex-end; 아이템 배치방법 */
+ /* 왼쪽 오른쪽, 가로정렬, 세로정렬 모두 지원 */
+.item1 { background: #ef9a9a;}
+
+.item2 { background: #f48fb1;}
+.item3 { background: #ce93d8;}
+.item4 { background: #b39ddb;}
+.item5 { background: #90caf9;}
+.item6 { background: #a5d6a7;}
+.item7 { background: #e6ee9c;}
+.item8 { background: #ef9a9a;}
+.item9 { background: blue;}
+.item10 { background: gray;}
+/* %는 컨테이너가 들어있는 부모의 높이의 100%를 채우겟다는 말임  */
+/* 컨테이너 부모는 body, 여기에 또 body의 부모인 html 100% , 둘다 적어야함 ㅁㅊ */
+/* 부모에 상관없이 나는 아이템을 보이는 vh 의 100%를 다 쓰겟다는게 100% 뷰하이 */
+/* 70vh, 80vh 등등 가능 */

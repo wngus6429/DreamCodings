@@ -1,0 +1,27 @@
+/** @format */
+
+div,
+span {
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+  background: pink;
+}
+
+/* display옵션으로 가로 배열 */
+/* inline은 물건, inline-block은 한줄에 여러개 상자 */
+/* block은 상자인데 한줄에 한개 */
+div {
+  background: red;
+  display: inline-block;
+  /* display: inline; */
+  /* 이걸 넣으면 안보임, 내용 보여야 보임, span 초기값과 비슷 */
+  /* Inline 이란건 컨텐츠 자체만을 꾸며줌 */
+  /* 당연히 내용이 길어지면 꾸며지는것도 길어지겟지 */
+}
+
+/* display옵션으로 세로 배열 */
+span {
+  background: blue;
+  display: block;
+}
