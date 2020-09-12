@@ -1,0 +1,20 @@
+/** @format */
+.box {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+}
+.box1 {
+  background-image: url("https://media.swncdn.com/cms/BST/67912-gettyimages-817147678-kieferpix.1200w.tn.webp");
+  background-repeat: no-repeat; /* 이거 안 넣으면 사진 반복 */
+  background-position: center; /* 이거 안 넣으면 위에만 보임 */
+  background-size: cover; /* 커버만 해도 반응형 같이 보임 */
+}
+.box2 {
+  background: center/cover no-repeat /* 이거랑 위 box1 이랑 같음 */
+    url("https://media.swncdn.com/cms/BST/67912-gettyimages-817147678-kieferpix.1200w.tn.webp");
+}
+.box3 {
+  background: repeat left
+    url("https://media.swncdn.com/cms/BST/67912-gettyimages-817147678-kieferpix.1200w.tn.webp");
+}

@@ -1,0 +1,18 @@
+/** @format */
+
+.box {
+  width: 100px;  height: 120px;
+  background-color: brown;  margin-bottom: 20px; }
+
+.box1 { transform: translateX(100px); /* 가로이동 */ }
+
+.box2 { /* 앞이 translateX고 뒤가 translateY가 되는거임. */
+  transform: translate(-5px, -20px);
+    /* Y축은 밑으로 갈수록 숫자가 커짐. */
+}
+
+.box3 { transform: scale(1.2); /* 1.2배 커짐 */ }
+
+.box4 { transform: rotate(45deg); }
+
+.box5 { transform: translate(100px, 100px) scale(2) rotate(46deg);}

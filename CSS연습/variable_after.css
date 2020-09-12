@@ -1,0 +1,28 @@
+/** @format */
+:root {
+  --background-color: thistle;
+  --text-color: whitesmoke;
+  --base: 8px;
+  /* -- 대쉬 2개 꼭 붙여야하고 위에 root 꼭 적어야함 */
+}
+.first-list {
+  background-color: var(--background-color);
+  color: var(--text-color, red);
+  margin-left: var(--base);
+  /* var 을 써줘야 CSS 변수 사용 가능 */
+}
+
+.second-list {
+  background-color: var(--background-color);
+  color: var(--text-color, red);
+  margin-left: calc(var(--base) * 2);
+  /* calc 수학을 사용 할 수 있음 */
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --background-color: salmon;
+    --text-color: whitesmoke;
+    --base: 4px;
+  }
+}
