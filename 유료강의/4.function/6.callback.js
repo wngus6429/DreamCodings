@@ -17,3 +17,13 @@ function calculator(a, b, action) {
 
 calculator(1, 1, add);
 calculator(1, 2, multiply);
+
+function ele(a, b) {
+  console.log(a * b);
+}
+function sold(a, b, array, action) {
+  for (let i = 0; i < array; i++) {
+    action(a, b);
+  }
+}
+sold(3, 9, 5, ele);

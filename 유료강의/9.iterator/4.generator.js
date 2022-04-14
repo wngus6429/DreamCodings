@@ -23,8 +23,12 @@ function* multipleGenerator() {
 const multiple = multipleGenerator();
 let next = multiple.next();
 console.log(next.value, next.done);
-
+console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡ');
+next = multiple.next();
+console.log(next.value, next.done);
+//! 리턴을 하게되면 끝나게 된다.
 // multiple.return();
+//! multiple안으로 에러를 던짐
 multiple.throw('Error!');
 
 next = multiple.next();

@@ -118,7 +118,9 @@ console.log(match(['🍌', '🥝', '🍇'], ['🍌', '🍓', '🍇', '🍓']));
 // ! 퀴즈4
 // ! 5이상 (보다 큰) 숫자들의 평균
 function 함수(nums) {
-  return nums.filter((item) => item > 5).reduce((avg, num, index, array) => avg + num / array.length, 0);
+  return nums
+    .filter((item) => item > 5)
+    .reduce((avg, num, index, array) => avg + num / array.length, 0);
 }
 const nums = [3, 16, 5, 25, 4, 34, 21];
 console.log('퀴즈4', 함수(nums));
