@@ -43,6 +43,7 @@ objs.add(obj1);
 console.log(objs);
 
 console.log('끝');
+
 //! 퀴즈2
 const obj3 = { name: '🍌', price: 5 };
 objs.add(obj3);
