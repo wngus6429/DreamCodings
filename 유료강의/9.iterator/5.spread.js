@@ -26,7 +26,7 @@ console.log(arr);
 arr = [...fruits1, '🍓', ...fruits2];
 console.log(arr);
 
-// Object
+//! Object
 const ellie = { name: 'Ellie', age: 20, home: { address: 'home' } };
 const updated = {
   ...ellie,

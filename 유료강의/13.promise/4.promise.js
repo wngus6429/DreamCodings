@@ -11,3 +11,5 @@ runInDelay(2)
   .then(() => console.log('타이머 완료!'))
   .catch(console.error)
   .finally(() => console.log('끝났다!'));
+
+runInDelay(2).then(() => console.log('타이머 완료!'));

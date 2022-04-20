@@ -33,7 +33,7 @@ console.log(age);
 console.log(occupation);
 console.log(pet);
 
-// Quiz
+//! Quiz
 const prop = {
   name: 'Button',
   styles: {

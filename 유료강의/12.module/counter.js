@@ -6,3 +6,5 @@ export function increase() {
 export function getCount() {
   return count;
 }
+
+//! export default는 하나만 보내는거임

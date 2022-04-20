@@ -1,6 +1,6 @@
 // try catch finally
 function readFile(path) {
-  //   throw new Error('파일 경로를 찾을 수 없음');
+  // throw new Error('파일 경로를 찾을 수 없음');
   return '파일의내용';
 }
 
@@ -9,6 +9,9 @@ function processFile(path) {
   try {
     content = readFile(path);
   } catch (error) {
+    // console.log(error.name);
+    // console.log(error.message);
+    // console.log(error.stack);
     console.log(error);
     content = '기본내용';
   } finally {
