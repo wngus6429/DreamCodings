@@ -8,13 +8,21 @@
   </head>
   <body>
     <script>
-      fetch(
-        'https://www.7timer.info/bin/astro.php?lon=113.2&lat=23.1&ac=0&unit=metric&output=json&tzshift=0'
-      )
+      fetch('https://www.7timer.info/bin/astro.php?lon=113.2&lat=23.1&ac=0&unit=metric&output=json&tzshift=0')
         .then((response) => {
+          console.log(response);
+          //! 이 JSON은 프로미스를 리턴한다.
           return response.json();
         })
-        .then((data) => console.log(data.dataseries));
+        .then((data) => {
+          console.log(data);
+          return data.dataseries;
+        })
+        .then((item) => {
+          console.log(item);
+          return item.filter((item) => item.cloudcover > 3 && item.timepoint > 20);
+        })
+        .then(console.log);
     </script>
   </body>
 </html>
