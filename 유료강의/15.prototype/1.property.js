@@ -1,30 +1,39 @@
 const dog = { name: '와우', emoji: '🐶' };
 
-console.log(Object.keys(dog));
-console.log(Object.values(dog));
-console.log(Object.entries(dog));
+console.log(Object.keys(dog)); //?    [ 'name', 'emoji' ]
+console.log(Object.values(dog)); //?  [ '와우', '🐶' ]
+console.log(Object.entries(dog)); //? [ [ 'name', '와우' ], [ 'emoji', '🐶' ] ]
 
-console.log('name' in dog);
-console.log(dog.hasOwnProperty('name'));
+console.log('name' in dog); //? name이라는 키가 있니? true
+console.log(dog.hasOwnProperty('name')); //? name이라는 키가 있냐? 위가 간편, true
 
-// 오브젝트의 각각의 프로퍼티는 프로퍼티 디스크립터라고 하는 객체로 저장됨
+//! 오브젝트의 각각의 프로퍼티는 프로퍼티 디스크립터라고 하는 객체로 저장됨
+//! writable = 값을 수정할수 있는지
+//! enumerable= 값을 열거, 이터러블 할수 있는지
+//! configurable = key에 해당하는 값, 속성들을 수정, 삭제 할수 있는지
 const descriptors = Object.getOwnPropertyDescriptors(dog);
 console.log(descriptors);
-
-const desc = Object.getOwnPropertyDescriptor(dog, 'name');
+// { name: { value: '와우', writable: true, enumerable: true, configurable: true },
+//  emoji: { value: '🐶', writable: true, enumerable: true, configurable: true }  }
+const desc = Object.getOwnPropertyDescriptor(dog, 'name'); // s가 안붙음
+// 객체 이름, 어떤걸 받아올건지 키 이름
 console.log(desc);
+// { value: '와우', writable: true, enumerable: true, configurable: true }
+
+console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ');
 
 Object.defineProperty(dog, 'name', {
   value: '멍멍',
-  writable: false,
-  enumerable: false,
-  configurable: false,
+  writable: false, // 값을 업데이트 할수 있는지
+  enumerable: false, // keys 같은 각종 기능으로 열거 가능하게 할건지
+  configurable: false, // 수정 할수 있는지 없는지
 });
 
-console.log(dog.name);
+console.log(dog.name); // 멍멍
 console.log(Object.keys(dog));
-delete dog.name;
-console.log(dog.name);
+// [ 'emoji' ] , 위에 열거 불가능하게 함, enumerable 가 false
+delete dog.name; // configurable: false,때문에 삭제 안됨
+console.log(dog.name); // 멍멍 , 위에껄로 삭제 안되었음
 
 const student = {};
 Object.defineProperties(student, {
@@ -50,4 +59,4 @@ Object.defineProperties(student, {
     configurable: true,
   },
 });
-console.log(student);
+console.log(student); // { firstName: '영희', lastName: '김' }
