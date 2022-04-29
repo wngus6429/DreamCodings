@@ -20,17 +20,17 @@ getChicken()
   .then(fryEgg)
   .then(console.log);
 
-// //! 축약 안한버전
-// getChicken()
-//   .catch((error) => {
-//     console.log(error.name);
-//     return '🐔';
-//   })
-//   .then((chicken) => {
-//     return fetchEgg(chicken);
-//   })
-//   .then((egg) => fryEgg(egg))
-//   .then((friedEgg) => console.log(friedEgg));
+//! 축약 안한버전
+getChicken()
+  .catch((error) => {
+    console.log(error.name);
+    return '🐔';
+  })
+  .then((chicken) => {
+    return fetchEgg(chicken);
+  })
+  .then((egg) => fryEgg(egg))
+  .then((friedEgg) => console.log(friedEgg));
 
 // getChicken()
 //   .then((chiken) => {
