@@ -29,7 +29,7 @@ cat.printName(); //! 고양이의 이름을 출력한다옹: 냐옹
 
 function printOnMonitor(printName) {
   console.log('모니터를 준비하고!, 전달된 콜백을 실행!');
-  printName();
+  printName(); // 이 함수 안에 아무것도 없지. 호출하는 사람이 없음
 }
 //* cat에 있는 printName의 참조값을 전달한거지
 printOnMonitor(cat.printName);
