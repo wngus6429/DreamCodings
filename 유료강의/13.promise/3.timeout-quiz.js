@@ -15,3 +15,4 @@ try {
     console.log('타이머 완료!');
   }, 2);
 } catch (error) {}
+
