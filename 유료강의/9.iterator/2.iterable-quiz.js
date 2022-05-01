@@ -12,7 +12,7 @@ const multiple = {
   },
 };
 
-console.clear();
+// console.clear();
 for (const num of multiple) {
   console.log(num);
 }

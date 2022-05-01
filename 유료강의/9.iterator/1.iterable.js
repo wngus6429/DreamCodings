@@ -18,7 +18,7 @@ while (true) {
 }
 
 for (let item of array) {
-  console.log(item);
+  console.log('item', item);
 }
 
 for (let item of array.values()) {
