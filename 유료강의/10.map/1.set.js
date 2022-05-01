@@ -11,9 +11,10 @@ console.log('존재2', set임.has(6)); // false
 
 //! 순회
 console.log('순회시작');
-set임.forEach((item) => console.log(item));
+set임.forEach((item) => console.log('아이템', item));
+// 1 2 3
 for (const value of set임.values()) {
-  console.log(value); // 1 2 3 1 2 3
+  console.log(value); // 1 2 3
 }
 console.log('순회끝');
 
