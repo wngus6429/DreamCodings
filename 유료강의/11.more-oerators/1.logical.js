@@ -11,10 +11,10 @@ if (obj1 || obj2) {
 // let result1 = false && obj2; //! 결과 false
 let result1 = obj1 && obj2; //! 중요함, 뒤에꺼 할당
 console.log('리절트1', result1);
-
+// 리절트1 { name: '🐱', owner: 'Ellie' }
 let result2 = obj1 || obj2; //! 중요함, true인게 할당
 console.log('리절트2', result2);
-
+// 리절트2 { name: '🐶' }
 console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ');
 
 //! 활용예
@@ -37,14 +37,17 @@ obj1.owner && changeOwner(obj1);
 //! 앞이 true 라면 뒤가 실행이 되어서 Owner생김
 obj2.owner && changeOwner(obj2);
 console.log('obj1', obj1);
+// obj1 { name: '🐶' }
 console.log('obj2', obj2);
+// obj2 { name: '🐱', owner: '바뀐주인!' }
 //! 앞이 false라서 뒤 실행
 obj1.owner || makeNewOwner(obj1);
 //! 앞이 true라서 뒤가 실행이 안되었음.
 obj2.owner || makeNewOwner(obj2);
-console.log(obj1);
-console.log(obj2);
-
+console.log('옵젝1', obj1);
+// 옵젝1 { name: '🐶', owner: '새로운주인!' }
+console.log('옵젝2', obj2);
+// 옵젝2 { name: '🐱', owner: '바뀐주인!' }
 console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ');
 
 //! null 또는 undefined인 경우를 확인할때
@@ -54,7 +57,7 @@ console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ');
 let item = { price: 1 }; //! 죽지 않게 하기 위해 이렇게
 //! item이 true라면 뒤가 실행되서 할당
 const price = item && item.price;
-console.log(price);
+console.log('price', price); // price 1
 
 //!  기본값을 설정
 //!  default parameter는 null과 undefined인 경우
