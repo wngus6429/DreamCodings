@@ -1,5 +1,6 @@
 function a() {
-  for (let i = 0; i < 1000000000000000; i++);
+  for (let i = 0; i < 10000000000; i++);
+  console.log('부윀');
   return 1;
 }
 

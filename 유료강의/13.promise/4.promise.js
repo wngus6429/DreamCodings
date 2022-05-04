@@ -12,5 +12,5 @@ runInDelay(2)
   .catch(console.error)
   .finally(() => console.log('끝났다!'));
 
-//! 성공하는 케이스만
+//! 2번째 버전, 성공하는 케이스만
 runInDelay(2).then(() => console.log('타이머 완료!'));
