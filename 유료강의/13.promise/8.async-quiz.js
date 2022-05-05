@@ -18,6 +18,7 @@ async function makeFriedEgg() {
   } catch {
     chicken = '🐔';
   }
+  console.log(chicken);
   const egg = await fetchEgg(chicken);
   return fryEgg(egg);
 }
