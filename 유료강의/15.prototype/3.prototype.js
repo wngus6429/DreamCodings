@@ -2,6 +2,7 @@
 // const dog1 = { name: '뭉치', emoji: '🐶' };
 // const dog2 = { name: '코코', emoji: '🐩' };
 
+//* 생성자함수
 function Dog(name, emoji) {
   this.name = name;
   this.emoji = emoji;

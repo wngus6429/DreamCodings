@@ -9,9 +9,10 @@ Animal.prototype.printName = function () {
 function Dog(name, emoji, owner) {
   // super(name, emoji)
   Animal.call(this, name, emoji); //! super랑 동일
-  this.owner = owner;
+  this.owner = owner; // 여기 Dog에서만 필요한거
 }
 // Dog.prototype = Object.create(Object.prototype);
+//! create는 인자로 전달한 프로토타입을 베이스로해서 새로운 오브젝트를 만듬
 Dog.prototype = Object.create(Animal.prototype);
 
 Dog.prototype.play = () => {
@@ -28,6 +29,7 @@ Tiger.prototype.hunt = () => {
 
 const dog1 = new Dog('멍멍', '🐶', '엘리');
 dog1.play(); //같이 놀자옹!
+console.log('dog1', dog1);
 dog1.printName(); //멍멍 🐶
 const tiger1 = new Tiger('어흥', '🐯');
 tiger1.printName(); //어흥 🐯

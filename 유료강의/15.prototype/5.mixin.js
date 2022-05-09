@@ -12,11 +12,11 @@ const sleep = {
     console.log(`${this.name} 자요!`);
   },
 };
-
+// 생성자 함수
 function Dog(name) {
   this.name = name;
 }
-
+//! Dog에 play와 sleep을 같이 섞고 싶음
 Object.assign(Dog.prototype, play, sleep);
 const dog = new Dog('멍멍');
 console.log(dog); // Dog { name: '멍멍' }
@@ -25,6 +25,7 @@ dog.sleep(); // 멍멍 자요!
 
 //! 자스의 클래스는 뭐다? 클래스처럼 보이지만 내부는 프로토타입을 베이스로함
 //! 자스는 원래 본질, 프로토타입을 베이스로한 언어니까
+//! 밑에는 증거다
 class Animal {}
 class Tiger extends Animal {
   constructor(name) {
