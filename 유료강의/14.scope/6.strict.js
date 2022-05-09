@@ -9,7 +9,8 @@ function add(x) {
   'use strict'; //! 이렇게 함수 안에서만 사용 가능함
   var a = 2;
   var b = a + x;
-  console.log(this);
+  console.log('this', this); //undefined
+  console.log('b', b); // 3
 }
 add(1);
 
