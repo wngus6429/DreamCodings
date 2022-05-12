@@ -10,6 +10,7 @@ function makeCounter() {
   return increase;
 }
 const increase = makeCounter();
+console.log('인크', increase);
 increase();
 increase();
 increase();
@@ -22,4 +23,5 @@ class Counter {
   }
 }
 const counter = new Counter();
+console.log('카운', Counter);
 counter.increase();
