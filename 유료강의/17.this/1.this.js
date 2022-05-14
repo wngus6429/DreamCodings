@@ -19,7 +19,7 @@ console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ');
  *! 느슨한 모드에서는 globalThis
  */
 function fun() {
-  console.log(this);
+  console.log('fun', this);
 }
 fun();
 
