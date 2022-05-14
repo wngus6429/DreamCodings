@@ -23,3 +23,4 @@ class Counter {
 }
 const counter = new Counter();
 counter.increase();
+counter.increase();
