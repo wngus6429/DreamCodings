@@ -1,8 +1,8 @@
 // Fetch the items from the JSON file
 function loadItems() {
   return fetch('data/data.json')
-    .then(response => response.json())
-    .then(json => json.items);
+    .then((response) => response.json())
+    .then((json) => json.items);
 }
 
 // Creates HTML element from given item
@@ -36,7 +36,7 @@ function onButtonClick(event, items) {
 
 // Make the items matching {key: value} invisible.
 function updateItems(items, key, value) {
-  items.forEach(item => {
+  items.forEach((item) => {
     if (item.dataset[key] === value) {
       item.classList.remove('invisible');
     } else {
@@ -45,10 +45,10 @@ function updateItems(items, key, value) {
   });
 }
 
-loadItems().then(items => {
+loadItems().then((items) => {
   const elements = items.map(createElement);
   const container = document.querySelector('.items');
   container.append(...elements);
   const buttons = document.querySelector('.buttons');
-  buttons.addEventListener('click', event => onButtonClick(event, elements));
+  buttons.addEventListener('click', (event) => onButtonClick(event, elements));
 });
