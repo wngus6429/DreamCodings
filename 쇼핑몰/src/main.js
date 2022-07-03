@@ -10,8 +10,8 @@ function loadItems() {
 // Update the list with the given items
 function displayItems(items) {
   const container = document.querySelector('.items');
-  const html = items.map((item) => createHTMLString(item));
-  console.log('확인용', html);
+  // const html = items.map((item) => createHTMLString(item));
+  // console.log('확인용', html);
   container.innerHTML = items.map((item) => createHTMLString(item)).join('');
 }
 
@@ -25,6 +25,7 @@ function createHTMLString(item) {
 }
 
 function onButtonClick(event, items) {
+  console.log('이벤트', event, items);
   const dataset = event.target.dataset;
   const key = dataset.key;
   const value = dataset.value;

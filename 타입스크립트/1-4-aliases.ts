@@ -1,0 +1,25 @@
+{
+  // 새로운 타입을 내가 정의함
+  // Type Aliases
+  type Text = string;
+  const name: Text = 'hello';
+  const address: Text = 'korea';
+  type Num = number;
+  type Student = {
+    name: string;
+    age: number;
+  };
+  const student: Student = {
+    animal: 'dog', //에러남
+    name: 'eel',
+    age: 12,
+  };
+
+  // String Literal Types
+  type Name = 'name';
+  let ellieName: Name;
+  ellieName = 'name'; // name안쓰면 에러남
+  ellieName = 'na'; // name안쓰면 에러남
+  type JSON = 'json';
+  const json: JSON = 'json';
+}
