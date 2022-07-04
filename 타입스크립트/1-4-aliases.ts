@@ -22,4 +22,7 @@
   ellieName = 'na'; // name안쓰면 에러남
   type JSON = 'json';
   const json: JSON = 'json';
+
+  type Boal = true;
+  const isCat: Boal = true;
 }
