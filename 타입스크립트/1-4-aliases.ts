@@ -1,7 +1,7 @@
 {
-  // 새로운 타입을 내가 정의함
-  // Type Aliases
-  type Text = string;
+  //! 새로운 타입을 내가 정의함
+  //* Type Aliases
+  type Text = string; // Text라는 타입은 문자열이라 하는거
   const name: Text = 'hello';
   const address: Text = 'korea';
   type Num = number;
@@ -15,11 +15,11 @@
     age: 12,
   };
 
-  // String Literal Types
+  //! String Literal Types
   type Name = 'name';
   let ellieName: Name;
-  ellieName = 'name'; // name안쓰면 에러남
-  ellieName = 'na'; // name안쓰면 에러남
+  ellieName = 'name'; //! name안쓰면 에러남
+  ellieName = 'na'; //! name안쓰면 에러남
   type JSON = 'json';
   const json: JSON = 'json';
 
