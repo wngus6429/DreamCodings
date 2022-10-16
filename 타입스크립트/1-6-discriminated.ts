@@ -24,7 +24,7 @@
   // fail -> reason
   //! 위에 공통적인 result라는 프로퍼티를 가지고 활용
   function printLoginState(state:LoginState){
-    state.result // success 혹은 fail
+    //* state.result // success 혹은 fail
     if(state.result === 'success'){
       console.log(`🍟${state.response.body}`)
     } else {
@@ -32,3 +32,5 @@
     }
   }
 }
+// Discriminated Union 차별화하는 구별할수 있는
+// 유니온 타입에 차별이 되는 아름이 동일한 타입을 둠으로서 간편하게 구분할수 있는것
