@@ -29,17 +29,17 @@
   let anything: any = 0;
   anything = 'hello';
 
-  // void 아무것도 리턴하지 않음. 텅텅빔
-  // 생략 할 수도 있다. 회사마다 다름
+  //! void 아무것도 리턴하지 않음. 텅텅빔
+  //* 생략 할 수도 있다. 회사마다 다름
   function print(): void {
     console.log('hello');
     return;
   }
-  //void는 undefined밖에 못 적음
+  //* void는 undefined밖에 못 적음
   let unusable: void = undefined; // 똥.
 
-  // never는 리턴할 계획이 없음.
-  // 에러를 던지던지, while문으로 무한 돌리던지
+  //! never는 리턴할 계획이 없음.
+  //* 에러를 던지던지, while문으로 무한 돌리던지
   function throwError(message: string): never {
     // message -> server (log)
     throw new Error(message);
