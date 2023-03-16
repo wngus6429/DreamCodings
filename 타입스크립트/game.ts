@@ -2,8 +2,7 @@
  * Let's make a game 🕹
  */
 let position = { x: 0, y: 0 };
-function move(direction: string): object {
-  let po = { x: 0, y: 0 };
+function move(direction: string) {
   switch (direction) {
     case 'up':
       position.y += 1;
@@ -20,7 +19,6 @@ function move(direction: string): object {
     default:
       throw new Error('unkonwn command');
   }
-  return po;
 }
 console.log(position); // { x: 0, y: 0}
 move('up');
