@@ -124,8 +124,13 @@
     const noSugar = new NoSugar();
     //
     const sweetCandyMachine = new CoffeeMachine(12, noMilk, candySugar)
+    console.log('sweetCandyMachine', sweetCandyMachine);
     const sweetMachine = new CoffeeMachine(12, noMilk, sugar)
+    console.log('sweetMachine', sweetMachine);
     const latteeMachine = new CoffeeMachine(12, cheapMilkMaker, noSugar);
+    console.log('latteeMachine', latteeMachine);
     const coldLatteeMachine = new CoffeeMachine(12, coldMilkMaker, noSugar);
+    console.log(coldLatteeMachine);
     const sweetLatteMachine = new CoffeeMachine(12, cheapMilkMaker, candySugar)
+    console.log(sweetLatteMachine);
 }
