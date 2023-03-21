@@ -81,31 +81,24 @@
         }
         makeMilk(cup:CoffeeCup):CoffeeCup{
             this.steamMilk();
-            return {
-                ...cup,
-                hasMilk: true
-            }
+            return { ...cup, hasMilk: true }
         }
     }
 
     // 설탕 제조기
     class SugarMixer implements SugarProvider{
-        private getSuger(){
-            console.log('getting some suger from jar!!!');
+        private getSugar(){
+            console.log('getting some Sugar from jar!!!');
             return true;
         }
-        addSuger(cup:CoffeeCup): CoffeeCup{
-            const sugar = this.getSuger();
-            return {
-                ...cup, hasSugar:sugar
-            }
+        addSugar(cup:CoffeeCup): CoffeeCup{
+            const sugar = this.getSugar();
+            return { ...cup, hasSugar:sugar }
         }
     }
     
     class CaffeLatteMachine extends CoffeeMachine{
-        constructor(
-            beans:number, 
-            public readonly serialNumber:string, 
+        constructor( beans:number, public readonly serialNumber:string, 
             private milkFother: MilkFrother, 
         ){
             super(beans);
@@ -128,10 +121,9 @@
     }
 
     class SweetCoffeeLatteMachine extends CoffeeMachine {
-        constructor(
-            private beans:number,
-            private milk: MilkFrother,
-            private sugar: SugarProvider){
+        constructor( private beans:number, private milk: MilkFrother,
+            private sugar: SugarProvider)
+        {
             super(beans)
         }
         makeCoffee(shots:number):CoffeeCup{
@@ -146,10 +138,10 @@
     const fancyMilkMaker = new FancyMilkSteamer();
     const coldMilkMaker = new ColdMilkSteamer();
     // 설탕
-    const candySuger = new SugarMixer();
+    const candySugar = new SugarMixer();
     const sugar = new SugarMixer();
     //
-    const sweetCandyMachine = new SweetCoffeeMaker(12, candySuger)
+    const sweetCandyMachine = new SweetCoffeeMaker(12, candySugar)
     const sweetMachine = new SweetCoffeeMaker(12, sugar)
 
     console.log(sweetCandyMachine);
@@ -157,6 +149,6 @@
 
     // const latteeMachine = new CaffeLatteMachine(12, 'SS', cheapMilkMaker);
     // const coldLatteeMachine = new CaffeLatteMachine(12, 'SS', ColdMilkSteamer);
-    // const sweetLatteMachine = new SweetCoffeeLatteMaker(12, cheapMilkMaker, candySuger)
+    // const sweetLatteMachine = new SweetCoffeeLatteMaker(12, cheapMilkMaker, candySugar)
 
 }

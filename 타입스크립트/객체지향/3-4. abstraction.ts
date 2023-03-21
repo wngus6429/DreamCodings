@@ -1,12 +1,8 @@
 {
-    type CoffeeCup = {
-        shots: number;
-        hasMilk: boolean;
-    }
+    type CoffeeCup = { shots: number; hasMilk: boolean; }
     
     interface CoffeeMaker {
-        makeCoffee(shots: number): CoffeeCup;
-    }
+        makeCoffee(shots: number): CoffeeCup;}
     
     interface CommercialCoffeeMaker {
         makeCoffee(shots: number): CoffeeCup;

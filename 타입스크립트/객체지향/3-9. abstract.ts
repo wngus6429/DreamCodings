@@ -59,10 +59,7 @@
     // 커피머신을 상속한 클래스
     class SweetCoffeeMaker extends CoffeeMachine{
         protected extract(shots: number): CoffeeCup{
-            return {
-                shots,
-                hasSugar: true
-            }
+            return { shots, hasSugar: true }
         }
     }
 
@@ -76,5 +73,4 @@
         console.log('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ')
         machine.makeCoffee(1);
     })
-
 }
