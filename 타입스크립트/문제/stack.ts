@@ -4,7 +4,7 @@ interface Stack{
     pop(): string;
 }
 
-// 
+
 type StackNode = {
     readonly value: string;
     readonly next?: StackNode; // next: StackNode | undefined;
@@ -21,8 +21,8 @@ class StackImpl implements Stack {
         if(this.size === this.capacity) {
             throw new Error("Stack is Full!");
         }
-        
         const node:StackNode = { value: value, next: this.head };
+        console.log('노드', node);
         this.head = node;
         this._size++;
     }
