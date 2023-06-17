@@ -6,6 +6,7 @@
     console.log(direction);
   }
   move('down'); //* 타이핑 칠때 밑에 뜸
+
   //! ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
   type TileSize = 8 | 16 | 32;
   const txgg: TileSize = 13;
@@ -47,3 +48,5 @@
     }
   }
 }
+
+// 20230617 복습

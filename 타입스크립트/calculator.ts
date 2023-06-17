@@ -42,3 +42,5 @@ console.log(calculate2('substract', 3, 1)); // 2
 console.log(calculate2('multiply', 4, 2)); // 8
 console.log(calculate2('divide', 4, 2)); // 2
 console.log(calculate2('remainder', 5, 2)); // 1
+
+// 20230617 복습

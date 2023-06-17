@@ -31,10 +31,13 @@
         break;
       case 'success':
         console.log(`😃${state.response.body}`);
+        // break;
       case 'fail':
-        console.log(`😱${state.reason}`);
+        console.log(`😱${state.reason}`); // 앞에 break 때문에 에러뜸
       default:
         throw new Error(`unknown state: ${state}`);
     }
   }
 }
+
+// 20230617 복습

@@ -29,3 +29,5 @@ move('left');
 console.log(position); // { x: -1, y: 0}
 move('right');
 console.log(position); // { x: 0, y: 0}
+
+// 20230617 복습

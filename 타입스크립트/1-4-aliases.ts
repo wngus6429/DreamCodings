@@ -21,7 +21,7 @@
   //! String Literal Types
   type Name = 'name';
   let ellieName: Name;
-  ellieName = 'name'; //! name안쓰면 에러남
+  ellieName = 'name';
   ellieName = 'na'; //! name안쓰면 에러남
   type JSON = 'json';
   const json: JSON = 'json';
@@ -30,3 +30,5 @@
   type Boal = true;
   const isCat: Boal = true;
 }
+
+// 20230617 복습
