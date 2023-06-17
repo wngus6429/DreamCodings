@@ -47,3 +47,5 @@
   console.log(addNumbers(1, 2, 3));
   console.log(addNumbers(1, 2, 4, 6));
 }
+
+//* 2023/06/12 복습

@@ -21,10 +21,12 @@
   //! null 비었다고 결정됨
   let person: null; // 똥, 이렇게 단독 본적이 없댄다
   let person2: string | null; // 대개는 undefined 쓴댄다.
+  
   //! unknown 알수 없는. 똥
   let notSure: unknown = 0;
   notSure = 'he';
   notSure = true;
+  
   //! any 어느것이든 넣을수 있음. 똥임
   let anything: any = 0;
   anything = 'hello';
@@ -47,11 +49,13 @@
   }
   let neverEnding: never;
 
-  // object 똥임
-  // 원시타입을 제외한 모든 오브젝트 타입 할당 가능
+  //! object 똥임
+  //! 원시타입을 제외한 모든 오브젝트 타입 할당 가능
   // 배열도 가능, 광범위한, 추상적인
   let obj: object; // 똥임
   function acceptSomeObject(obj: object) {}
   acceptSomeObject({ name: 'ellie' });
   acceptSomeObject({ animal: 'dog' });
 }
+
+//* 2023/06/12 복습
