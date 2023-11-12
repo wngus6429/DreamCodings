@@ -4,7 +4,7 @@
 
   class NetworkClient {
     tryConnect(): void {
-      throw new OfflineError('no network!');
+      throw new OfflineError("no network!");
     }
   }
 
@@ -22,6 +22,7 @@
       try {
         this.userService.login();
       } catch (error) {
+        console.log("에러잡음");
         // show dialog to use
       }
     }
