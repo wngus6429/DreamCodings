@@ -13,19 +13,24 @@
     readonly [P in keyof T]: T[P];
   };
   type VideoOptional = Optional<Video>;
+  const videoOp: VideoOptional = {
+    title: "hi",
+    author: "park",
+  };
+  console.log(videoOp);
 
   type Animal = {
     name: string;
     age: number;
   };
   const animal: Optional<Animal> = {
-    name: 'dog',
+    name: "dog",
   };
-  animal.name = 'ellie';
+  animal.name = "ellie";
 
   const video: ReadOnly<Video> = {
-    title: 'hi',
-    author: 'ellie',
+    title: "hi",
+    author: "ellie",
   };
 
   // type VideoOptional = {
@@ -38,9 +43,10 @@
   //   readonly author: string;
   // };
 
+  // 원래의 타입을 써도 되고, Null을 써도되고
   type Nullable<T> = { [P in keyof T]: T[P] | null };
   const obj2: Nullable<Video> = {
-    title: 'hi',
+    title: "hi",
     author: null,
   };
 
