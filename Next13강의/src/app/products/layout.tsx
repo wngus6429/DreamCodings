@@ -15,7 +15,7 @@ export default function ProduectsLayout({ children }: { children: React.ReactNod
     <>
       <nav className={styles.nav}>
         <Link href='/products/women'>여성옷</Link>
-        <Link href='/products/man'>여성옷</Link>
+        <Link href='/products/man'>남성옷</Link>
       </nav>
       <section className={styles.product}>{children}</section>
     </>

@@ -18,6 +18,7 @@ export function generateMetadata({ params }: Props) {
   };
 }
 // params.slug // 다이나믹 라우트
+// Props 안에 params가 있는거임.
 export default async function ProductPage({ params: { slug } }: Props) {
   // if (params.slug === 'nothing') {
   //   notFound();
@@ -38,7 +39,8 @@ export default async function ProductPage({ params: { slug } }: Props) {
   );
 }
 
-//! 밑에 이렇게 함으로서 페이지 미리생성이 가능하다.
+//! 밑에 이렇게 함으로서 페이지 미리 생성이 가능하다.
+// generateStaticParams 이건 Next에서 지원 하는 거임. 다이나믹 라우트 할때
 export async function generateStaticParams() {
   // 모든 제품의 페이지들을 미리 만들어 둘 수 있게 해줄거임(SSG)
   // const products = ['pants', 'skirt'];
