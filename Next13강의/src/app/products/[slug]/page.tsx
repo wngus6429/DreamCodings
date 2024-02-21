@@ -1,7 +1,7 @@
-import GoProductButton from '@/components/GoProductButton';
-import { getProduct, getProducts } from '@/service/product';
-import Image from 'next/image';
-import { notFound, redirect } from 'next/navigation';
+import GoProductButton from "@/components/GoProductButton";
+import { getProduct, getProducts } from "@/service/product";
+import Image from "next/image";
+import { notFound, redirect } from "next/navigation";
 
 export const revalidate = 3;
 
@@ -11,7 +11,11 @@ type Props = {
     slug: string;
   };
 };
-
+// export function generateMetadata(props: Props) {
+//   return {
+//     title: `제품의 이름: ${props.params.slug}`,
+//   };
+// }
 export function generateMetadata({ params }: Props) {
   return {
     title: `제품의 이름: ${params.slug}`,
@@ -25,7 +29,7 @@ export default async function ProductPage({ params: { slug } }: Props) {
   // }
   const product = await getProduct(slug);
   if (!product) {
-    redirect('/products'); // 없는 주소로 들어가면 여기로
+    redirect("/products"); // 없는 주소로 들어가면 여기로
     // notFound();
   }
   // 서버 파일에 있는 데이터중 해당 제품의 정보를 찾아서 그걸 보여줌
@@ -44,8 +48,13 @@ export default async function ProductPage({ params: { slug } }: Props) {
 export async function generateStaticParams() {
   // 모든 제품의 페이지들을 미리 만들어 둘 수 있게 해줄거임(SSG)
   // const products = ['pants', 'skirt'];
+
   const products = await getProducts();
   return products.map((product) => ({
     slug: product.id,
+    // 데이터베이스 내에서 각 제품의 ID는 유일합니다.
+    // 따라서, ID를 사용하는 것은 URL이 항상 유일하다는 것을 보장합니다.
+    // 가독성 문제: 숫자로된 ID는 사용자에게 의미가 없으므로,
+    // 사용자가 URL만 보고 제품을 식별하기 어려울 수 있습니다.
   }));
 }
