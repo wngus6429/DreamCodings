@@ -1,5 +1,5 @@
-import path from 'path';
-import { promises as fs } from 'fs';
+import path from "path";
+import { promises as fs } from "fs";
 
 export type Product = {
   id: string;
@@ -15,14 +15,17 @@ export type Product = {
 // process.cwd() 메소드는 현재 작업 디렉토리를 반환
 // data/products.json 라는 경로를 합쳐서, filePath 변수에 저장
 export async function getProducts(): Promise<Product[]> {
-  const filePath = path.join(process.cwd(), 'data', 'products.json');
-  // fs.readFile() 함수는 비동기 함수이며, 파일을 비동기적으로 읽음 이 함수는 Promise 객체를 반환
+  const filePath = path.join(process.cwd(), "data", "products.json");
+  // fs.readFile() 함수는 비동기 함수이며, 파일을 비동기적으로 읽음
+  //! 이 함수는 Promise 객체를 반환
   // 파일의 내용을 나타내는 문자열 데이터를 반환합니다.
-  const data = await fs.readFile(filePath, 'utf-8');
-  return JSON.parse(data);
+  const data = await fs.readFile(filePath, "utf-8");
+  return JSON.parse(data); //! json.parse도 비동기로 진행됨
 }
 
+// Promise가 되어있고, Product 아니면 undefined를 반환
 export async function getProduct(id: string): Promise<Product | undefined> {
   const products = await getProducts();
-  return products.find((item) => item.id === id); // 있으면 반환, 없으면 undefined
+  return products.find((item) => item.id === id);
+  // 있으면 있는거 반환, 없으면 undefined
 }
