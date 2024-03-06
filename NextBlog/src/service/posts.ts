@@ -25,6 +25,7 @@ export async function getNonFeaturedPosts(): Promise<Post[]> {
 }
 
 // Promise의 Post[]을 반환한다고 약속
+// app폴더 안에 있는건 서버컴포넌트이기 때문에 fs모듈을 사용할 수 있음
 export async function getAllPosts(): Promise<Post[]> {
   const filePath = path.join(process.cwd(), "data", "posts.json");
   return readFile(filePath, "utf-8")
