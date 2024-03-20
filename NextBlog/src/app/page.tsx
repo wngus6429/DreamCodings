@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <section className="bg-gray-500">Main</section>
       {/* @ts-expect-error Async Server Component */}
       <FeaturedPosts />
       {/* @ts-expect-error Async Server Component */}
