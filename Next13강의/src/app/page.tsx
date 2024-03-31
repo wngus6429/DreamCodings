@@ -10,7 +10,6 @@ import os from 'os'; // 노드 APIS
 
 export default function Home() {
   // notFound();
-  console.log('안녕 ! 서버');
   console.log(os.hostname());
   return (
     <>
