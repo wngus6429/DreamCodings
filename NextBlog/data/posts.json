@@ -13,7 +13,7 @@
     "date": "2022-05-08",
     "category": "javascript",
     "path": "javascript-basic",
-    "featured": false
+    "featured": "low"
   },
   {
     "title": "자바스크립트 10가지 프로팁!",

@@ -16,14 +16,6 @@ export type PostData = Post & {
   prev: Post | null;
 };
 
-export async function getFeaturedPosts(): Promise<Post[]> {
-  return getAllPosts().then((posts) => posts.filter((post) => post.featured));
-}
-
-export async function getNonFeaturedPosts(): Promise<Post[]> {
-  return getAllPosts().then((posts) => posts.filter((post) => !post.featured));
-}
-
 // Promise의 Post[]을 반환한다고 약속
 // app폴더 안에 있는건 서버컴포넌트이기 때문에 fs모듈을 사용할 수 있음
 export async function getAllPosts(): Promise<Post[]> {
@@ -31,6 +23,15 @@ export async function getAllPosts(): Promise<Post[]> {
   return readFile(filePath, "utf-8")
     .then<Post[]>((data) => JSON.parse(data)) // then(JSON.parse) 축약 버전임.
     .then((posts) => posts.sort((a, b) => (a.date > b.date ? -1 : 1))); // 최신순으로 정렬
+}
+
+// feature가 true인것만
+export async function getFeaturedPosts(): Promise<Post[]> {
+  return getAllPosts().then((posts) => posts.filter((post) => post.featured));
+}
+// feature가 false인것만
+export async function getNonFeaturedPosts(): Promise<Post[]> {
+  return getAllPosts().then((posts) => posts.filter((post) => !post.featured));
 }
 
 export async function getPostData(fileName: string): Promise<PostData> {
