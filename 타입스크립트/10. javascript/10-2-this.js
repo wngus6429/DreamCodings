@@ -8,7 +8,7 @@ console.clear();
 class Counter {
   count = 0;
   increase = () => {
-    // console.log(this);
+    console.log("counter", this);
   };
 }
 const counter = new Counter();
