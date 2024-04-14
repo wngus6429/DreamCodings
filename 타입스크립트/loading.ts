@@ -3,36 +3,36 @@
    * Print Loading State
    */
   type LoadingState = {
-    state: 'loading';
+    state: "loading";
   };
 
   type SuccessState = {
-    state: 'success';
+    state: "success";
     response: {
       body: string;
     };
   };
 
   type FailState = {
-    state: 'fail';
+    state: "fail";
     reason: string;
   };
 
   type ResourceLoadState = LoadingState | SuccessState | FailState;
 
-  printLoginState({ state: 'loading' }); // 👀 loading...
-  printLoginState({ state: 'success', response: { body: 'loaded' } }); // 😃 loaded
-  printLoginState({ state: 'fail', reason: 'no network' }); // 😱 no network
+  printLoginState({ state: "loading" }); // 👀 loading...
+  printLoginState({ state: "success", response: { body: "loaded" } }); // 😃 loaded
+  printLoginState({ state: "fail", reason: "no network" }); // 😱 no network
 
   function printLoginState(state: ResourceLoadState) {
     switch (state.state) {
-      case 'loading':
-        console.log('loading');
+      case "loading":
+        console.log("loading");
         break;
-      case 'success':
+      case "success":
         console.log(`😃${state.response.body}`);
-        // break;
-      case 'fail':
+      // break;
+      case "fail":
         console.log(`😱${state.reason}`); // 앞에 break 때문에 에러뜸
       default:
         throw new Error(`unknown state: ${state}`);
@@ -40,4 +40,5 @@
   }
 }
 
-// 20230617 복습
+//* 2023/06/17 복습
+//* 2024/04/14 복습

@@ -1,11 +1,11 @@
 {
   //! Union Types은 OR 이라고 이해하면됨
   //! 값을 정할수 있는거임.
-  type Direction = 'left' | 'right' | 'up' | 'down';
+  type Direction = "left" | "right" | "up" | "down";
   function move(direction: Direction) {
     console.log(direction);
   }
-  move('down'); //* 타이핑 칠때 밑에 뜸
+  move("down"); //* 타이핑 칠때 밑에 뜸
 
   //! ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
   type TileSize = 8 | 16 | 32;
@@ -25,7 +25,7 @@
   function login(): LoginState {
     return {
       response: {
-        body: 'logged in!',
+        body: "logged in!",
       },
     };
   }
@@ -39,14 +39,16 @@
   // printLoginState(state){}
   // success -> body
   // fail -> reason
+
   //! 이렇게 하는건 별로 좋지 않음.
-  function printLoginState(state:LoginState){
-    if('response' in state){
-      console.log(`🍟${state.response.body}`)
+  function printLoginState(state: LoginState) {
+    if ("response" in state) {
+      console.log(`🍟${state.response.body}`);
     } else {
-      console.log(`🍟${state.reason}`)
+      console.log(`🍟${state.reason}`);
     }
   }
 }
 
-// 20230617 복습
+//* 2023/06/17 복습
+//* 2024/04/14 복습

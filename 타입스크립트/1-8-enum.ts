@@ -16,7 +16,7 @@
 
   //! TypeScript
   //! enum대신에 유니온 타입이 좋다.
-  type DaysOfWeek = 'Monday' | 'Tuesday' | 'Wednesday';
+  type DaysOfWeek = "Monday" | "Tuesday" | "Wednesday";
 
   //! 모바일 클라쪽 문제땜에 enum 쓸때도 있다고 함...
   enum Days {
@@ -35,9 +35,10 @@
   // day = 10;
   console.log(day);
 
-  let dayOfweek: DaysOfWeek = 'Monday';
-  dayOfweek = 'Wednesday';
+  let dayOfweek: DaysOfWeek = "Monday";
+  dayOfweek = "Wednesday";
   console.log(dayOfweek);
 }
 
-// 20230617 복습
+//* 2023/06/17 복습
+//* 2024/04/14 복습

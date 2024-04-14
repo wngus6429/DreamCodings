@@ -4,30 +4,31 @@
 let position = { x: 0, y: 0 };
 function move(direction: string) {
   switch (direction) {
-    case 'up':
+    case "up":
       position.y += 1;
       break;
-    case 'down':
+    case "down":
       position.y -= 1;
       break;
-    case 'left':
+    case "left":
       position.x -= 1;
       break;
-    case 'right':
+    case "right":
       position.x += 1;
       break;
     default:
-      throw new Error('unkonwn command');
+      throw new Error("unkonwn command");
   }
 }
 console.log(position); // { x: 0, y: 0}
-move('up');
+move("up");
 console.log(position); // { x: 0, y: 1}
-move('down');
+move("down");
 console.log(position); // { x: 0, y: 0}
-move('left');
+move("left");
 console.log(position); // { x: -1, y: 0}
-move('right');
+move("right");
 console.log(position); // { x: 0, y: 0}
 
-// 20230617 복습
+//* 2023/06/17 복습
+//* 2024/04/14 복습

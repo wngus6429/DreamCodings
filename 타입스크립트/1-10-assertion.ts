@@ -26,10 +26,11 @@
   // !를 붙이면 여긴 무조건 null이 아니다
   // querySelector는 요소가 있을수도 null 일수도 있다.
   // 장담할떄 !붙임
-  const button = document.querySelector('class')!;
-  if(button){
+  const button = document.querySelector("class")!;
+  if (button) {
     button.nodeValue;
   }
 }
 
-// 20230617 복습
+//* 2023/06/17 복습
+//* 2024/04/14 복습

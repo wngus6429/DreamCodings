@@ -10,7 +10,6 @@
 
   // * JavaScript
   function jsFetchNum(id) {
-    // code ...
     return new Promise((resolve, reject) => {
       resolve(100);
     });
@@ -29,12 +28,12 @@
     console.log(firstName);
     console.log(lastName);
   }
-  printName('Steve', 'Job');
-  printName('Steve');
-  printName('juhyun', undefined);
+  printName("Steve", "Job");
+  printName("Steve");
+  printName("juhyun", undefined);
 
   // Default parameter
-  function printMessage(message: string = 'default 메세지') {
+  function printMessage(message: string = "default 메세지") {
     console.log(message);
   }
   printMessage();
@@ -49,3 +48,4 @@
 }
 
 //* 2023/06/12 복습
+//* 2024/04/14 복습

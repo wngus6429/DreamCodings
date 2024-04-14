@@ -1,12 +1,12 @@
 {
   //* Javascript
-  //* Primitive: Number, String, Boolean, 
+  //* Primitive: Number, String, Boolean,
   //* Bigint, Symbol, Null, Undefined
   //* Object: Function, array....
   //! Number
   const num: number = 1;
   //* String
-  const str: string = 'hello';
+  const str: string = "hello";
   //* Boolean
   const boal: boolean = false;
   //! undefined 비었는지 안 비었는지 아직 모른다.
@@ -21,22 +21,23 @@
   //! null 비었다고 결정됨
   let person: null; // 똥, 이렇게 단독 본적이 없댄다
   let person2: string | null; // 대개는 undefined 쓴댄다.
-  
+
   //! unknown 알수 없는. 똥
   let notSure: unknown = 0;
-  notSure = 'he';
+  notSure = "he";
   notSure = true;
-  
+
   //! any 어느것이든 넣을수 있음. 똥임
   let anything: any = 0;
-  anything = 'hello';
+  anything = "hello";
 
   //! void 아무것도 리턴하지 않음. 텅텅빔
   //* 생략 할 수도 있다. 회사마다 다름
   function print(): void {
-    console.log('hello');
+    console.log("hello");
     return;
   }
+
   //* void는 undefined밖에 못 적음
   let unusable: void = undefined; // 똥.
 
@@ -54,8 +55,9 @@
   // 배열도 가능, 광범위한, 추상적인
   let obj: object; // 똥임
   function acceptSomeObject(obj: object) {}
-  acceptSomeObject({ name: 'ellie' });
-  acceptSomeObject({ animal: 'dog' });
+  acceptSomeObject({ name: "ellie" });
+  acceptSomeObject({ animal: "dog" });
 }
 
 //* 2023/06/12 복습
+//* 2024/04/14 복습

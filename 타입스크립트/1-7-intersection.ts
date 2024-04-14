@@ -18,11 +18,12 @@
   }
 
   internWork({
-    name: 'ellie',
+    name: "ellie",
     score: 1,
     empolyeeId: 123,
     work: () => {},
   });
 }
 
-// 20230617 복습
+//* 2023/06/17 복습
+//* 2024/04/14 복습
