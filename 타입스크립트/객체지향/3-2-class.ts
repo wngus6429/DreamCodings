@@ -5,6 +5,7 @@
   };
 
   class CoffeeMaker {
+    //! 이거 static 빼면 밑에 maker에서 나옴, 메모리절약 위해서 static
     static BEANS_GRAMM_PER_SHOT: number = 7; // class level, 인스턴스로 복사 안됨
     coffeeBeans: number = 0; // instance (object) level
 
