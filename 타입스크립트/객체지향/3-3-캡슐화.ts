@@ -4,9 +4,11 @@
     hasMilk: boolean;
   };
   class CoffeeMaker {
+    //! private 붙이면 CoffeeMaker.Bean 뭐시기가 안보임
     private static BEANS_GRAMM_PER_SHOT: number = 7; // class level, 인스턴스로 복사 안됨
     private coffeeBeans: number = 0; // instance (object) level
-    constructor(coffeeBeans: number) {
+    
+    private constructor(coffeeBeans: number) {
       this.coffeeBeans = coffeeBeans;
     }
     // 클래스 내부의 어떤 속성값도 필요하지 않기에 static 무언가 오브젝트를
@@ -16,6 +18,8 @@
     static makeMachine(coffeeBeans: number): CoffeeMaker {
       return new CoffeeMaker(coffeeBeans);
     }
+    
+    //! 앞에 public으로 자동으로 생략되어 있는거임
     fillCoffeeBeans(beans: number): void {
       if (beans < 0) {
         throw new Error('value for beans should be greater than 0');
@@ -34,13 +38,19 @@
       };
     }
   }
-  const maker = new CoffeeMaker(32);
-  maker.fillCoffeeBeans(32);
+  
+  const maker = new CoffeeMaker(32); //! private constructor 때문에 안됨
+  maker.coffeeBeans  = 3 //! 9줄의 private로 막힘
+  maker.fillCoffeeBeans(32); //! 이걸로 채워야함
+  const maker2 = CoffeeMaker.makeMachine(30)
+  maker2.fillCoffeeBeans(100)
   // private는 어떤 누구라도 클래스 외부에서는 coffeeBeans에 접근 불가능
   // protected 상속을 할때 외부에서는 접근할수 없지만 클래스를 상속한 자식에서는 접근 가능
   // 캡슐화는 클래스를 만들때 외부에서 접근할수 있는것은 무엇인지 내부적으로만 가지고 있어야
   // 하는게 데이터는 무엇인지 결정할수 있다.
   // 외부에 노출해도 되는게 뭔지 잘 생각해야함.
+
+  // protected는 나중에 상속을 할떄 외부에서는 접근 할 수 없지만, 클래스를 상속한 자식클래스에만 접근가능
 
   class User {
     // private firstname: string;
