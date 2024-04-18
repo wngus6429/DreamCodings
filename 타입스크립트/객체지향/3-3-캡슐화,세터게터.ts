@@ -38,19 +38,21 @@
       };
     }
   }
-  
-  const maker = new CoffeeMaker(32); //! private constructor 때문에 안됨
-  maker.coffeeBeans  = 3 //! 9줄의 private로 막힘
+  //! Private안하면 43~46, 49~51 둘다 움직임.
+  //! Private 안해야 이거 움직임. 아래 49~51도 움직임.
+  const maker = new CoffeeMaker(32); //! private constructor 하면 에러발생
+  maker.coffeeBeans  = 3 //! 9줄의 private로 에러
   maker.fillCoffeeBeans(32); //! 이걸로 채워야함
+  console.log(maker) //! CoffeeMaker { coffeeBeans: 35 }
+
+  //! Private 했을시, Private하면 위에 43~46코드 안 움직임, 아래3줄만 움직임
   const maker2 = CoffeeMaker.makeMachine(30)
   maker2.fillCoffeeBeans(100)
+  console.log(maker2) //! CoffeeMaker { coffeeBeans: 130 }
   // private는 어떤 누구라도 클래스 외부에서는 coffeeBeans에 접근 불가능
   // protected 상속을 할때 외부에서는 접근할수 없지만 클래스를 상속한 자식에서는 접근 가능
   // 캡슐화는 클래스를 만들때 외부에서 접근할수 있는것은 무엇인지 내부적으로만 가지고 있어야
-  // 하는게 데이터는 무엇인지 결정할수 있다.
-  // 외부에 노출해도 되는게 뭔지 잘 생각해야함.
-
-  // protected는 나중에 상속을 할떄 외부에서는 접근 할 수 없지만, 클래스를 상속한 자식클래스에만 접근가능
+  // 하는게 데이터는 무엇인지 결정할수 있다. 외부에 노출해도 되는게 뭔지 잘 생각해야함.
 
   class User {
     // private firstname: string;
