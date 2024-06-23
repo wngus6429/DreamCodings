@@ -19,6 +19,6 @@ const either: Either<number, number> = new SimpleEither(4, 5);
 either.left();
 either.right();
 const cc = new SimpleEither(4, "hello");
-console.log(cc);
+console.log(cc); // SimpleEither { leftValue: 4, rightValue: 'hello' }
 const best = new SimpleEither({ name: 'ellie'}, 'hello');
-console.log(best);
+console.log(best); // SimpleEither { leftValue: { name: 'ellie' }, rightValue: 'hello' }
