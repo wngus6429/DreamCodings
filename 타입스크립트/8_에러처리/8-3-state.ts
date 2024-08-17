@@ -1,10 +1,20 @@
 {
-  class TimeoutError extends Error {}
-  class OfflineError extends Error {}
+  type NetworkErrorState = {
+    result: "fail";
+    reason: "offline" | "down" | "timeout";
+  };
+
+  type SuccessState = {
+    result: "success";
+  };
+
+  type ResultState = SuccessState | NetworkErrorState;
 
   class NetworkClient {
-    tryConnect(): void {
-      throw new OfflineError("no network!");
+    tryConnect(): ResultState {
+      return {
+        result: "success",
+      };
     }
   }
 
@@ -22,13 +32,14 @@
       try {
         this.userService.login();
       } catch (error) {
-        console.log("에러잡음");
         // show dialog to use
+        console.log(error);
       }
     }
   }
 
   const client = new NetworkClient();
+  console.log("client", client);
   const service = new UserService(client);
   const app = new App(service);
   app.run();

@@ -1,19 +1,10 @@
 {
-  type NetworkErrorState = {
-    result: 'fail';
-    reason: 'offline' | 'down' | 'timeout';
-  };
+  class TimeoutError extends Error {}
+  class OfflineError extends Error {}
 
-  type SuccessState = {
-    result: 'success';
-  };
-
-  type ResultState = SuccessState | NetworkErrorState;
   class NetworkClient {
-    tryConnect(): ResultState {
-      return {
-        result: 'success',
-      };
+    tryConnect(): void {
+      throw new OfflineError("no network!");
     }
   }
 
@@ -21,6 +12,7 @@
     constructor(private client: NetworkClient) {}
 
     login() {
+      // 여기서 try catch는 해봐야 별 의미가 없고
       this.client.tryConnect();
     }
   }
@@ -32,6 +24,8 @@
         this.userService.login();
       } catch (error) {
         // show dialog to use
+        // 좀 더 의미있게 여기서 잡는다.
+        console.log("에러잡음");
       }
     }
   }
