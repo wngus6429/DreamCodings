@@ -5,7 +5,7 @@
     url: string;
     data: string;
   };
-  // ㅍvideo에 이것들이 있다면 제외한걸 만듬, 다른 어떠한 키도 가능함.
+  // video에 이것들이 있다면 제외한걸 만듬, 다른 어떠한 키도 가능함.
   type VideoMetadata = Omit<Video, "url" | "data" | "ㅗ">;
 
   function getVideo(id: string): Video {
