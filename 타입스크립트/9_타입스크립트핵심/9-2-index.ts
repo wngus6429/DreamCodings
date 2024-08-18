@@ -14,7 +14,7 @@
   type Name = Animal["name"]; // Name 타입은 string
   const text: Name = "hello";
 
-  type Gender = Animal["gender"]; //'male' | 'female'
+  type Gender = Animal["gender"]; // 'male' | 'female'
 
   // Animal의 키만 가능하다
   type Keys = keyof Animal; // name, age, gender 사용가능

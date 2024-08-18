@@ -20,5 +20,6 @@ type T0 = TypeName<string>;
 ("string");
 type T1 = TypeName<"a">;
 ("string");
+// 함수도 된다 ㅋㅋ
 type T2 = TypeName<() => void>;
 ("function");
