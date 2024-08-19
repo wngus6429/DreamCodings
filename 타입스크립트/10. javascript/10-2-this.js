@@ -4,7 +4,7 @@ function simpleFunc() {
   console.log(this);
 }
 window.simpleFunc();
-console.clear();
+// console.clear();
 class Counter {
   count = 0;
   increase = () => {

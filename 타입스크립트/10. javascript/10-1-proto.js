@@ -34,3 +34,4 @@ LatteMachine.prototype = Object.create(CoffeeMachine.prototype);
 const latteMachine = new LatteMachine(123);
 console.log(latteMachine);
 latteMachine.makeCoffee();
+// 프로토타입은 객체지향프로그래밍, 상속을 하기 위한, 코드를 재사용하기위한
